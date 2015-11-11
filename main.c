@@ -7,10 +7,24 @@
 
 int main()
 {
-	int *ptr, *next;
-	ptr = pgalloc(1000);
-	next = pgalloc(7);
-	pages[0] = NULL;
-	printf("%p\n%p\n%p", ptr, next, pages[0]);
+/*	for(int i = 1; i<1000; i++)
+	{
+		pgalloc(i);
+		i+=10;
+	}*/
+	int size = 100;
+	pgalloc(size);
+	pgalloc(size);
+	pgalloc(size);
+	void *mem = pgalloc(size);
+	pgfree(mem);
+	pgalloc(size);
+	mem = pgalloc(size);
+	pgfree(mem);
+	mem = pgalloc(size);
+	pgfree(mem);
+	mem = pgalloc(size);
+	pgfree(mem);
+	pgview();
 	return 0;
 }
