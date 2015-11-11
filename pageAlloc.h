@@ -14,4 +14,6 @@ typedef struct PAGE{
 } PAGE;
 
 void *pgalloc(int size);
+void pgfree(void *ptr);
+void pgview();
 #endif
